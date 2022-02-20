@@ -1,0 +1,6 @@
+---
+ - name: Add nginx repository
+   apt_repository: repo='ppa:nginx/stable'
+ 
+ - name: Install nginx
+   action: apt pkg=nginx-extras state=installed update_cache=true  

@@ -1,0 +1,14 @@
+---
+ - name: Add deployment user
+   block:
+     - name: user
+       user:
+         name: deployer
+         password: $6$zJlMpocPsqD4$sHtd0KC/wDeh0lycjiWWjlfbVTyV3PL8sXA8FO3mPF8ThyJC1z5Ak8szYLeMNuAjcxx1.Pzis3RMpVM2uK/wZ0 
+         groups: admin
+     - name: create folder
+       file:
+         path: =/home/deployer/test
+         state: directory
+     - name: install packets
+       apt: pkg=wget state=latest
